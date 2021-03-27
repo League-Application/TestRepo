@@ -1,0 +1,14 @@
+Initial activity
+- First summoner search
+- Second summoner search
+
+Comparison Activity
+- first and second:
+    - Show icon, name, rank, LP; most used champs?
+
+Single User Activity
+- Whichever was clicked, open up 5 more recent match details
+
+Side-by-side Activity
+- Stats:
+    - avg kda, dmg/game, game duration, W/L ratio

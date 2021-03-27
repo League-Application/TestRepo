@@ -25,7 +25,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="submit"
-        android:onClick="makeToast"
         app:layout_constraintEnd_toEndOf="@+id/input_summonerName"
         app:layout_constraintTop_toBottomOf="@+id/input_summonerName"
         />

@@ -5,8 +5,10 @@ import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.constant.Platform;
 public class SummonerObject {
-    ApiConfig config = new ApiConfig().setKey("RGAPI-117a0eec-85db-41da-a597-89113964359b");
+    ApiConfig config = new ApiConfig().setKey("RGAPI-6cf20a7f-d2ab-4514-8c0f-c30a7a8784d5");
     RiotApi api = new RiotApi(config);
+
+    private static final long serialVersionUID = -8213488199644701555L;
 
     private String name;
     private String summonerID;
