@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YUUMIGG">
+        <activity android:name="main_package.InfoActivity"></activity>
         <activity android:name="main_package.Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

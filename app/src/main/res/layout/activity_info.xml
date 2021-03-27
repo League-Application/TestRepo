@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="main_package.InfoActivity">
+
+    <TextView
+        android:id="@+id/secondSummonerName"
+        android:layout_width="253dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="68dp"
+        android:text="Second Summoner Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstSummonerName" />
+
+    <TextView
+        android:id="@+id/secondSummonerLP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/secondSummonerRank"
+        app:layout_constraintTop_toTopOf="@+id/secondSummonerRank" />
+
+    <TextView
+        android:id="@+id/secondSummonerRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rank"
+        app:layout_constraintStart_toStartOf="@+id/firstSummonerName"
+        app:layout_constraintTop_toBottomOf="@+id/secondSummonerName" />
+
+    <TextView
+        android:id="@+id/firstSummonerName"
+        android:layout_width="253dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="72dp"
+        android:text="First Summoner Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/firstSummonerRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rank"
+        app:layout_constraintStart_toStartOf="@+id/firstSummonerName"
+        app:layout_constraintTop_toBottomOf="@+id/firstSummonerName" />
+
+    <TextView
+        android:id="@+id/firstSummonerLP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/firstSummonerRank"
+        app:layout_constraintTop_toTopOf="@+id/firstSummonerRank" />
+</androidx.constraintlayout.widget.ConstraintLayout>

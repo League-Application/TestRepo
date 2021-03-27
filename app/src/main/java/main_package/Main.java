@@ -2,6 +2,7 @@ package main_package;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.example.yuumigg.R;
 
 import net.rithms.riot.api.RiotApiException;
+import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 
 import java.util.concurrent.ExecutionException;
 
@@ -22,6 +24,7 @@ public class Main extends AppCompatActivity {
     private Button btn_submit;                                      // submit button
     private SummonerObject firSummoner, secSummoner;                // two 'friends' summoners (as objects)
     private SummonerObject[] duo = new SummonerObject[2];           // array of size 2 to store summoners for easy access
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,14 +38,18 @@ public class Main extends AppCompatActivity {
 //            Toast.makeText(this, "Button clicked", Toast.LENGTH_SHORT).show();
             try {
                 duo = new setSummoners().execute().get();                       // runs setSummoners class below
+                SummonerStorage.getInstance().set(duo);
+                Intent intent = new Intent(Main.this, InfoActivity.class);
+                startActivity(intent);
             } catch (ExecutionException e) {                                    // required catch block
                 e.printStackTrace();
             } catch (InterruptedException e) {                                  // required catch block
                 e.printStackTrace();
             }
-            Log.i(TAG, "Summoners: " +                                    // log summoners
-                    duo[0].getName() + ", " +
-                    duo[1].getName());
+//            Log.i(TAG, "Summoners: " +                                    // log summoners
+//                    duo[0].getName() + ", " +
+//                    duo[1].getName());
+
 //            Toast.makeText(this, "Got Summoners: "  +
 //                    duo[0].getName() + ", " +
 //                    duo[1].getName(), Toast.LENGTH_SHORT).show();
@@ -65,7 +72,7 @@ public class Main extends AppCompatActivity {
         }
         @Override
         protected void onPostExecute(SummonerObject[] aVoid) {
-            Log.i(TAG, "Summoner " + duo[0].getName() + " and " + duo[1].getName() + " grabbed!");
+            Log.i(TAG, "Grabbed " + duo[0].getName() + " and " + duo[1].getName());
             super.onPostExecute(aVoid);
         }
     }
