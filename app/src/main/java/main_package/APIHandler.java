@@ -27,14 +27,12 @@ public class APIHandler extends OAuthBaseClient {
     }
 
 
-    public void getRank(JsonHttpResponseHandler handler, int player_num, String tier, String rank) {
-        String summonerID = summoners[player_num].getSummonerID();
+    public void getRank(JsonHttpResponseHandler handler, int player) {
+        String summonerID = summoners[player].getSummonerID();
         String apiUrl = BASE_URL + "league/v4/entries/by-summoner/" + summonerID;
 
         // Can specify query string params directly or through RequestParams.
         RequestParams params = new RequestParams();
-        params.put("tier", tier);
-        params.put("rank", rank);
         client.get(apiUrl, params, handler);
     }
 
