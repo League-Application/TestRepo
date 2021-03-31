@@ -7,30 +7,46 @@
     tools:context="main_package.InfoActivity">
 
     <TextView
+        android:id="@+id/tvLevelInt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30"
+        app:layout_constraintStart_toEndOf="@+id/tvLevel2"
+        app:layout_constraintTop_toTopOf="@+id/tvLevel2" />
+
+    <TextView
+        android:id="@+id/tvLevel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Level: "
+        app:layout_constraintStart_toStartOf="@+id/secondSummonerName"
+        app:layout_constraintTop_toBottomOf="@+id/secondSummonerRank" />
+
+    <TextView
         android:id="@+id/secondSummonerName"
         android:layout_width="253dp"
         android:layout_height="23dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="248dp"
         android:text="Second Summoner Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstSummonerName" />
 
     <TextView
-        android:id="@+id/secondSummonerLP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/secondSummonerRank"
-        app:layout_constraintTop_toTopOf="@+id/secondSummonerRank" />
-
-    <TextView
         android:id="@+id/secondSummonerRank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rank"
-        app:layout_constraintStart_toStartOf="@+id/firstSummonerName"
+        app:layout_constraintStart_toStartOf="@+id/secondSummonerName"
+        app:layout_constraintTop_toBottomOf="@+id/secondSummonerName" />
+
+    <TextView
+        android:id="@+id/secondSummonerLP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/secondSummonerRank"
         app:layout_constraintTop_toBottomOf="@+id/secondSummonerName" />
 
     <TextView
@@ -55,8 +71,45 @@
         android:id="@+id/firstSummonerLP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="32dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/firstSummonerRank"
         app:layout_constraintTop_toTopOf="@+id/firstSummonerRank" />
+
+    <TextView
+        android:id="@+id/tvLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Level: "
+        app:layout_constraintStart_toStartOf="@+id/firstSummonerRank"
+        app:layout_constraintTop_toBottomOf="@+id/firstSummonerRank" />
+
+    <TextView
+        android:id="@+id/tvLevelInt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30"
+        app:layout_constraintStart_toEndOf="@+id/tvLevel"
+        app:layout_constraintTop_toBottomOf="@+id/firstSummonerLP" />
+
+    <ImageView
+        android:id="@+id/ivFirst"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/firstSummonerName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/firstSummonerName"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/ivSecond"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/secondSummonerName"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/secondSummonerName"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

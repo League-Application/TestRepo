@@ -5,7 +5,7 @@ import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.constant.Platform;
 public class SummonerObject {
-    ApiConfig config = new ApiConfig().setKey("RGAPI-6cf20a7f-d2ab-4514-8c0f-c30a7a8784d5");
+    ApiConfig config = new ApiConfig().setKey("RGAPI-59197c22-0db6-442e-ae02-78ca10438dec");
     RiotApi api = new RiotApi(config);
 
     private static final long serialVersionUID = -8213488199644701555L;
@@ -17,9 +17,11 @@ public class SummonerObject {
     private int summonerLevel;
     private int profileIconID;
     private Summoner summoner;
+    private String imageURL;
 
     public SummonerObject() { // default constructor
     }
+
     public SummonerObject(String username) throws RiotApiException {
         summoner = api.getSummonerByName(Platform.NA, username);
         name = summoner.getName();
@@ -28,6 +30,7 @@ public class SummonerObject {
         puuid = summoner.getPuuid();
         summonerLevel = summoner.getSummonerLevel();
         profileIconID = summoner.getProfileIconId();
+//        imageURL = profileIconID.getImage().getURL();
     }
     public String getName() {
         return name;
