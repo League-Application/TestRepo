@@ -37,7 +37,9 @@ public class InfoActivity extends AppCompatActivity {
 
         firstSummonerLevel.setText(summoners[0].getSummonerLevel()+"");
         secondSummonerLevel.setText(summoners[1].getSummonerLevel()+"");
-        
+
+
+
 
     }
 }

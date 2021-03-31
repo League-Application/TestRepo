@@ -42,4 +42,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.github.taycaldwell:riot-api-java:4.3.0'
     implementation "com.merakianalytics.orianna:orianna-android:4.0.0-rc7"
+    implementation 'com.codepath.libraries:android-oauth-handler:2.2.0'
 }
