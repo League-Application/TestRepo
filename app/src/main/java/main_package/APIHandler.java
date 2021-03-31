@@ -1,9 +1,11 @@
 package main_package;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.RequestParams;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.yuumigg.BuildConfig;
@@ -13,7 +15,9 @@ import net.rithms.riot.api.RiotApi;
 import com.codepath.oauth.OAuthBaseClient;
 import com.github.scribejava.core.builder.api.BaseApi;
 
-public class APIHandler extends OAuthBaseClient {
+import okhttp3.Headers;
+
+public class APIHandler {
     public static final String CONSUMER_KEY = "RGAPI-59197c22-0db6-442e-ae02-78ca10438dec";
     ApiConfig config = new ApiConfig().setKey(CONSUMER_KEY);
     RiotApi api = new RiotApi(config);
@@ -22,18 +26,26 @@ public class APIHandler extends OAuthBaseClient {
 
     public static final String BASE_URL = "https://na1.api.riotgames.com/lol/"; // Change this, base API URL
 
-    public APIHandler(Context c, BaseApi apiInstance, @Nullable String consumerUrl, @Nullable String consumerKey, @Nullable String consumerSecret, @Nullable String scope, @Nullable String callbackUrl) {
-        super(c, apiInstance, BASE_URL, CONSUMER_KEY, consumerSecret, scope, callbackUrl);
-    }
 
 
-    public void getRank(JsonHttpResponseHandler handler, int player) {
+
+    public void getRank(int player, JsonHttpResponseHandler handler) {
         String summonerID = summoners[player].getSummonerID();
         String apiUrl = BASE_URL + "league/v4/entries/by-summoner/" + summonerID;
 
-        // Can specify query string params directly or through RequestParams.
-        RequestParams params = new RequestParams();
-        client.get(apiUrl, params, handler);
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(apiUrl, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Headers headers, JSON json) {
+                Log.d("APIHandler.java", "SUCCESS BTICH");
+            }
+
+            @Override
+            public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
+
+            }
+        });
+
     }
 
     /* 1. Define the endpoint URL with getApiUrl and pass a relative path to the endpoint
