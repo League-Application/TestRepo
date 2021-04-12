@@ -38,6 +38,7 @@ public class Main extends AppCompatActivity {
 //            Toast.makeText(this, "Button clicked", Toast.LENGTH_SHORT).show();
             try {
                 duo = new setSummoners().execute().get();                       // runs setSummoners class below
+                Log.i(TAG, duo[0].getName());
                 SummonerStorage.getInstance().set(duo);
                 Intent intent = new Intent(Main.this, InfoActivity.class);
                 startActivity(intent);

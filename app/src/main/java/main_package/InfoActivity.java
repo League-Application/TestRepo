@@ -17,7 +17,7 @@ public class InfoActivity extends AppCompatActivity {
 
     TextView firstSummonerName, firstSummonerRank, firstSummonerLP, firstSummonerLevel;
     TextView secondSummonerName, secondSummonerRank, secondSummonerLP, secondSummonerLevel;
-    SummonerObject[] summoners;
+    SummonerObject[] summoners = SummonerStorage.getInstance().get();
     public static final String TAG = "InfoActivity";
 
     static int player = 0;
@@ -40,31 +40,29 @@ public class InfoActivity extends AppCompatActivity {
         secondSummonerLP = findViewById(R.id.secondSummonerLP);
         secondSummonerLevel = findViewById(R.id.tvLevelInt2);
 
-        summoners = SummonerStorage.getInstance().get();
-
         firstSummonerName.setText(summoners[0].getName());
         secondSummonerName.setText(summoners[1].getName());
 
         firstSummonerLevel.setText(summoners[0].getSummonerLevel()+"");
         secondSummonerLevel.setText(summoners[1].getSummonerLevel()+"");
 
-        getPlayerRank(firstSummoner);
-        getPlayerRank(secondSummoner);
+//        getPlayerRank(firstSummoner);
+//        getPlayerRank(secondSummoner);
 
-        Log.i(TAG, "first and second rank reached");
-        APIHandler handler = new APIHandler();
-        JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Headers headers, JSON json) {
-
-            }
-
-            @Override
-            public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
-
-            }
-        };
-        handler.getRank(1, jsonHttpResponseHandler);
+//        Log.i(TAG, "first and second rank reached");
+//        APIHandler handler = new APIHandler();
+//        JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
+//            @Override
+//            public void onSuccess(int statusCode, Headers headers, JSON json) {
+//
+//            }
+//
+//            @Override
+//            public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
+//
+//            }
+//        };
+//        handler.getRank(1, jsonHttpResponseHandler);
     }
 
     private void getPlayerRank(int player) {

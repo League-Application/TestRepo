@@ -1,11 +1,15 @@
 package main_package;
+import android.os.Build;
+
+import com.example.yuumigg.BuildConfig;
+
 import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.constant.Platform;
 public class SummonerObject {
-    ApiConfig config = new ApiConfig().setKey("RGAPI-59197c22-0db6-442e-ae02-78ca10438dec");
+    ApiConfig config = new ApiConfig().setKey(BuildConfig.API_KEY);
     RiotApi api = new RiotApi(config);
 
     private static final long serialVersionUID = -8213488199644701555L;
